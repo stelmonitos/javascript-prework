@@ -2,7 +2,7 @@
 function playGame(playerInput)
 {
   clearMessages();
-  function getMoveName(argMoveId) {
+  const getMoveName = function (argMoveId) {
     if (argMoveId == 1) {
       return 'kamień';
     } else if (argMoveId == 2) {
@@ -14,13 +14,13 @@ function playGame(playerInput)
     printMessage('Nie znam ruchu o id ' + argMoveId + '.');
     return 'nieznany ruch';
   }
-    const randomNumber = Math.floor(Math.random() * 3 + 1),
+    let randomNumber = Math.floor(Math.random() * 3 + 1),
           computerMove = getMoveName(randomNumber),
           playerMove = getMoveName(playerInput);
         printMessage('Mój ruch to: ' + computerMove);
         printMessage('Twój ruch to: ' + playerMove);
 
-  function displayResult(argComputerMove, argPlayerMove) {
+  const displayResult = function(argComputerMove, argPlayerMove) {
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
     if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
