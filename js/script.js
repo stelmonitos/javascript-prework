@@ -1,3 +1,4 @@
+{
 function playGame(playerInput)
 {
   clearMessages();
@@ -14,13 +15,13 @@ function playGame(playerInput)
     return 'nieznany ruch';
   }
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-  let computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
   printMessage('Mój ruch to: ' + computerMove);
 
   
-  let playerMove = getMoveName(playerInput);
+  const playerMove = getMoveName(playerInput);
 
   printMessage('Twój ruch to: ' + playerMove);
 
@@ -46,10 +47,11 @@ function playGame(playerInput)
 
   displayResult(computerMove, playerMove); 
 }
-  let playRock = document.getElementById('play-rock');
-  let playPaper = document.getElementById('play-paper');
-  let playScissors = document.getElementById('play-scissors');
+  const playRock = document.getElementById('play-rock');
+  const playPaper = document.getElementById('play-paper');
+  const playScissors = document.getElementById('play-scissors');
 
   playRock.addEventListener('click', function(){playGame(1)});
   playPaper.addEventListener('click', function(){playGame(2)});
   playScissors.addEventListener('click', function(){playGame(3)});
+}
