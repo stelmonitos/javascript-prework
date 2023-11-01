@@ -14,16 +14,11 @@ function playGame(playerInput)
     printMessage('Nie znam ruchu o id ' + argMoveId + '.');
     return 'nieznany ruch';
   }
-
-  const randomNumber = Math.floor(Math.random() * 3 + 1);
-
-  const computerMove = getMoveName(randomNumber);
-  printMessage('Mój ruch to: ' + computerMove);
-
-  
-  const playerMove = getMoveName(playerInput);
-
-  printMessage('Twój ruch to: ' + playerMove);
+    const randomNumber = Math.floor(Math.random() * 3 + 1),
+          computerMove = getMoveName(randomNumber),
+          playerMove = getMoveName(playerInput);
+        printMessage('Mój ruch to: ' + computerMove);
+        printMessage('Twój ruch to: ' + playerMove);
 
   function displayResult(argComputerMove, argPlayerMove) {
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
@@ -47,9 +42,9 @@ function playGame(playerInput)
 
   displayResult(computerMove, playerMove); 
 }
-  const playRock = document.getElementById('play-rock');
-  const playPaper = document.getElementById('play-paper');
-  const playScissors = document.getElementById('play-scissors');
+  const playRock = document.getElementById('play-rock'),
+        playPaper = document.getElementById('play-paper'),
+        playScissors = document.getElementById('play-scissors');
 
   playRock.addEventListener('click', function(){playGame(1)});
   playPaper.addEventListener('click', function(){playGame(2)});
